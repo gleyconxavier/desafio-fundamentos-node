@@ -1,5 +1,4 @@
 import Transaction from '../models/Transaction';
-import e from 'express';
 
 interface Balance {
   income: number;
@@ -18,22 +17,9 @@ interface userData {
   balance: Balance;
 }
 
-interface UserException {
-  message: string;
-  name: string;
-}
-
 enum Type {
   INCOME = 'income',
   OUTCOME = 'outcome',
-}
-
-function userException(message: string): UserException {
-  const name = "UserException";
-
-  const exception: UserException = ({ message, name });
-
-  return exception;
 }
 
 class TransactionsRepository {
